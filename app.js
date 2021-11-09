@@ -67,15 +67,17 @@ class DrumKit {
     updateButton(){
         //null default- is playing
         console.log(this.playBtn);
-        this.playBtn.classList.toggle("active");
         // e.target.classList.toggle("active");
         if(!this.isPlaying){
             this.playBtn.innerText = "Stop";
-            
+            this.playBtn.classList.add("active");
+
 
         }
         else{
             this.playBtn.innerHTML = "Play";
+            this.playBtn.classList.remove("active");
+
         }
     }
   
@@ -143,7 +145,7 @@ class DrumKit {
     this.isPlaying = null;
     const playBtn = document.querySelector(".play");
     console.log(document.querySelector(".play"));
-    if(!playBtn.classList.contains("active")){
+    if(playBtn.classList.contains("active")){
         this.start();
     }
   }
