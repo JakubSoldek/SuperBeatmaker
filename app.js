@@ -2,7 +2,7 @@
 class DrumKit {
     constructor() {
         this.pads = document.querySelectorAll(".pad");
-        this.playBtn = document.querySelector('.play');
+        this.playBtn = document.querySelector(".play");
         this.currentKick = "./sounds/kick-classic.wav";
         this.currentSnare = "./sounds/snare-acoustic01.wav";
         this.currentHihat = "./sounds/hihat-acoustic01.wav";
@@ -66,8 +66,13 @@ class DrumKit {
     }
     updateButton(){
         //null default- is playing
+        console.log(this.playBtn);
+        this.playBtn.classList.toggle("active");
+        // e.target.classList.toggle("active");
         if(!this.isPlaying){
             this.playBtn.innerText = "Stop";
+            
+
         }
         else{
             this.playBtn.innerHTML = "Play";
@@ -104,7 +109,8 @@ class DrumKit {
                     this.snareAudio.volume = 0;
                     break;
                 case "2":
-                    this.hihatAudio.volume = 0;
+                    this.hihatA,
+                    udio.volume = 0;
                     break;
             }
         }
